@@ -28,9 +28,15 @@ import {
       console.log('Client disconnected', client.id);
     }
   
+    /* @SubscribeMessage('message')
+    handleMessage(@ConnectedSocket() client: Socket, @MessageBody() data: any) {
+      console.log(client.id + ': ' + data);
+      this.server.emit('message', data);
+    } */ // This is for the chat, the client sends and receives its own messages.
+
     @SubscribeMessage('message')
     handleMessage(@ConnectedSocket() client: Socket, @MessageBody() data: any) {
-      console.log(data);
-      this.server.emit('message', data);
+      console.log(client.id + ': ' + data);
+      client.broadcast.emit('message', data);
     }
   }
