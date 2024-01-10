@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chat</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="information-bubble">
+      <h3>
+        Chat status:
+        <small class="hidden" id="status-online">online</small>
+        <small class="hidden" id="status-offline">offline</small>
+      </h3>
+
+      <h3>Connected people</h3>
+      <ul>
+        <!-- Append users connected -->
+      </ul>
+    </div>
+
+    <!-- Chat Location -->
+    <div class="bottom-right">
+      <!-- Chat -->
+      <div class="chat">
+        <!-- Contact information -->
+        <div class="contact bar">
+          <div class="pic picGroup"></div>
+
+          <div class="name">Chat Name</div>
+          <!-- <div class="seen">Today at 12:56</div> -->
+          <!-- Then configure it -->
+        </div>
+
+        <div class="messages" id="chat">
+          <!-- Show time -->
+          <!-- <div class="time">Today a 11:41</div> -->
+          <!-- Then configure it -->
+
+          <!-- Bubbles while writing -->
+          <!--           <div class="message">
+            <div class="typing typing-1"></div>
+            <div class="typing typing-2"></div>
+            <div class="typing typing-3"></div>
+          </div> -->
+          <!-- Then configure it -->
+        </div>
+
+        <!-- Inputs y Forms -->
+        <form class="input">
+          <input placeholder="Write your message here" type="text" />
+          <i class="fas fa-paper-plane"></i>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>
